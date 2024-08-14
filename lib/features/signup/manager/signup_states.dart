@@ -8,3 +8,9 @@ class ProfileImagePickedErrorState extends SignupStates{}
 
 class ToggleBetweenPasswordState extends SignupStates{}
 
+class RegisterLoadingState extends SignupStates{}
+
+class RegisterSuccessState extends SignupStates{}
+
+class RegisterErrorState extends SignupStates{}
+

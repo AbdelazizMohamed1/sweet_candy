@@ -18,7 +18,7 @@ class WaitPermissionScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BackArrow(),
+              const BackArrow(),
               height40,
               Center(child: HeadlineText(text: S.of(context).wait_permission)),
               height16,

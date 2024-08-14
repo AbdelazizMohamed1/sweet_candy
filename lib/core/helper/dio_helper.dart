@@ -11,15 +11,10 @@ class DioHelper{
     dio = Dio(
       BaseOptions(
         baseUrl: ApiConst.baseurl,
-        sendTimeout: Duration(seconds: 20),
         receiveDataWhenStatusError: true,
-        connectTimeout: Duration(seconds: 20),
-        receiveTimeout: Duration(seconds: 20),
         responseType: ResponseType.json,
-
         validateStatus: (status) {
           if(status == null){
-
             return false;
           }
           if(status == 401){
@@ -57,7 +52,7 @@ class DioHelper{
     required String path,
     Map<String, dynamic>? query,
     String lang = 'en',
-    required Map<String, dynamic> data,
+    required FormData data,
     String? token,
   }) async{
     dio!.options.headers = {

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -117,39 +119,50 @@ class SignupScreen extends StatelessWidget {
                             hintText: S.of(context).phone),
                         height24,
                         defaultTextFormField(
-                            controller: passwordController,
-                            textInputType: TextInputType.text,
-                            prefix: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SvgPicture.asset(ConstAssets.lock),
-                            ),
-                            obscureText: cubit.isPassword,
-                            hintText: S.of(context).Password,
-                            suffix: cubit.isPassword ?
-                            IconButton(onPressed: () {
-                              cubit.showPassword();
-                            }, icon: const Icon(Icons.visibility_outlined)) :
-                            IconButton(onPressed: () {
-                              cubit.showPassword();
-                            }, icon: const Icon(Icons.visibility_off_outlined)),
+                          controller: passwordController,
+                          textInputType: TextInputType.text,
+                          prefix: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: SvgPicture.asset(ConstAssets.lock),
+                          ),
+                          obscureText: cubit.isPassword,
+                          hintText: S.of(context).Password,
+                          suffix: cubit.isPassword
+                              ? IconButton(
+                                  onPressed: () {
+                                    cubit.showPassword();
+                                  },
+                                  icon: const Icon(Icons.visibility_outlined))
+                              : IconButton(
+                                  onPressed: () {
+                                    cubit.showPassword();
+                                  },
+                                  icon: const Icon(
+                                      Icons.visibility_off_outlined)),
                         ),
                         height24,
                         defaultTextFormField(
-                            controller: rePasswordController,
-                            textInputType: TextInputType.text,
-                            prefix: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SvgPicture.asset(ConstAssets.lock),
-                            ),
-                            obscureText: cubit.isRePassword,
-                            hintText: S.of(context).confirm_password,
-                            suffix: cubit.isRePassword ?
-                            IconButton(onPressed: () {
-                              cubit.showRePassword();
-                            }, icon: const Icon(Icons.visibility_outlined)) :
-                            IconButton(onPressed: () {
-                              cubit.showRePassword();
-                            }, icon: const Icon(Icons.visibility_off_outlined)),)
+                          controller: rePasswordController,
+                          textInputType: TextInputType.text,
+                          prefix: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: SvgPicture.asset(ConstAssets.lock),
+                          ),
+                          obscureText: cubit.isRePassword,
+                          hintText: S.of(context).confirm_password,
+                          suffix: cubit.isRePassword
+                              ? IconButton(
+                                  onPressed: () {
+                                    cubit.showRePassword();
+                                  },
+                                  icon: const Icon(Icons.visibility_outlined))
+                              : IconButton(
+                                  onPressed: () {
+                                    cubit.showRePassword();
+                                  },
+                                  icon: const Icon(
+                                      Icons.visibility_off_outlined)),
+                        )
                       ],
                     ),
                   ),
@@ -158,16 +171,29 @@ class SignupScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: defaultMaterialButton(
                       onPressed: () {
-
+                        cubit.register(
+                          name: userNameController.text,
+                          shopName: shopNameController.text,
+                          address: addressController.text,
+                          phone: phoneController.text,
+                          password: passwordController.text,
+                          confirmationPassword: rePasswordController.text,
+                          image: cubit.image
+                        );
                       },
                       text: S.of(context).confirm,
                       widget: Container(),
                     ),
                   ),
                   height32,
-                  RowUnderButton(text1: S.of(context).already_have_account, text2: S.of(context).LoginSpace ,onPressed: () {
-                    Components.navigateTo(context: context, widget: LoginScreen());
-                  },)
+                  RowUnderButton(
+                    text1: S.of(context).already_have_account,
+                    text2: S.of(context).LoginSpace,
+                    onPressed: () {
+                      Components.navigateTo(
+                          context: context, widget: LoginScreen());
+                    },
+                  )
                 ],
               ),
             ),
