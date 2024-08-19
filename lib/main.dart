@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sweet_candy/features/home/home_layout.dart';
 import 'package:sweet_candy/features/on_boarding/manager/on_boarding_cubit.dart';
 import 'package:sweet_candy/features/on_boarding/on_boarding_screen.dart';
 import 'package:sweet_candy/generated/l10n.dart';
@@ -11,11 +12,11 @@ import 'features/signup/manager/signup_cubit.dart';
 
 void main() {
   Bloc.observer = MyBlocObserver();
-  DioHelper.init();
+  // DioHelper.init();
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => OnBoardingCubit()..getOnBoardingData()),
+        BlocProvider(create: (context) => OnBoardingCubit()),
         BlocProvider(create: (context) => SignupCubit(),)
       ],
       child: MyApp(),
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: OnBoardingScreen(),
+      home: HomeLayout(),
     );
   }
 }

@@ -349,6 +349,66 @@ class S {
       args: [],
     );
   }
+
+  /// `For contact with admin`
+  String get contact_admin {
+    return Intl.message(
+      'For contact with admin',
+      name: 'contact_admin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Email`
+  String get send_email {
+    return Intl.message(
+      'Send Email',
+      name: 'send_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Orders`
+  String get my_orders {
+    return Intl.message(
+      'My Orders',
+      name: 'my_orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account Information`
+  String get account_information {
+    return Intl.message(
+      'Account Information',
+      name: 'account_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

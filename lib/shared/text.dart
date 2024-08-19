@@ -18,6 +18,19 @@ TextStyle text16W400(BuildContext context, {Color? color}) => TextStyle(
   color: color ?? Theme.of(context).textTheme.bodyLarge?.color,
 );
 
+
+TextStyle text20W400(BuildContext context, {Color? color}) => TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w400,
+  color: color ?? Theme.of(context).textTheme.bodyLarge?.color,
+);
+
+TextStyle text20W600(BuildContext context, {Color? color}) => TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w600,
+  color: color ?? Theme.of(context).textTheme.bodyLarge?.color,
+);
+
 TextStyle text12W600(BuildContext context, {Color? color}) => TextStyle(
   fontSize: 12,
   fontWeight: FontWeight.w600,

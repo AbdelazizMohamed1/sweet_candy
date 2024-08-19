@@ -30,12 +30,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "Password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
         "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الجوال"),
         "Signup": MessageLookupByLibrary.simpleMessage("أنشاء حساب"),
+        "account_information":
+            MessageLookupByLibrary.simpleMessage("معلومات الحساب"),
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "already_have_account":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل ؟ "),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "contact_admin":
+            MessageLookupByLibrary.simpleMessage("للتواصل مع المسؤول"),
         "create_new_account":
             MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "create_new_password":
@@ -46,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "يرجى إدخال الرمز المكون من 4 أرقام الذي تم إرساله إلى رقم هاتفك المحمول"),
         "enter_phone_number":
             MessageLookupByLibrary.simpleMessage("أدخل رقم هاتفك"),
+        "my_orders": MessageLookupByLibrary.simpleMessage("طلباتي"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "new_password":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
@@ -58,7 +63,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "يرجى الانتظار، سيقوم المسؤول بمنحك الإذن قريبًا."),
         "resend_code":
             MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
+        "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "send_code": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
+        "send_email":
+            MessageLookupByLibrary.simpleMessage("إرسال بريد إلكتروني"),
+        "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "shop_name": MessageLookupByLibrary.simpleMessage("اسم المتجر"),
         "verification_message": MessageLookupByLibrary.simpleMessage(
             "سنرسل رمزًا للتحقق من رقم الهاتف أدناه"),

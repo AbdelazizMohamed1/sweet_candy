@@ -10,4 +10,7 @@ SizedBox width16 = const SizedBox(width: 16,);
 
 SizedBox width20 = const SizedBox(width: 20,);
 
+SizedBox width24 = const SizedBox(width: 24,);
+
+
 SizedBox width40 = const SizedBox(width: 40,);

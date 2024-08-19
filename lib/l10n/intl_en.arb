@@ -28,5 +28,11 @@
   "password_must_be_different": "Your new password must be different from the previously used passwords.",
   "create_new_password": "Create new password",
   "wait_permission": "Wait for permission",
-  "please_wait": "Please wait, the administrator will grant you permission soon."
+  "please_wait": "Please wait, the administrator will grant you permission soon.",
+  "contact_admin": "For contact with admin",
+  "send_email": "Send Email",
+  "my_orders": "My Orders",
+  "search": "Search",
+  "account_information": "Account Information",
+  "settings": "Settings"
 }

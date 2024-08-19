@@ -30,12 +30,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "Password": MessageLookupByLibrary.simpleMessage("Password"),
         "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "Signup": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "account_information":
+            MessageLookupByLibrary.simpleMessage("Account Information"),
         "address": MessageLookupByLibrary.simpleMessage("The Address"),
         "already_have_account": MessageLookupByLibrary.simpleMessage(
             "Do you already have an account ? "),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
+        "contact_admin":
+            MessageLookupByLibrary.simpleMessage("For contact with admin"),
         "create_new_account":
             MessageLookupByLibrary.simpleMessage("Create new account"),
         "create_new_password":
@@ -46,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter the 4 digit code sent to your mobile number"),
         "enter_phone_number":
             MessageLookupByLibrary.simpleMessage("Enter your phone number"),
+        "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
         "no_account":
@@ -57,7 +62,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "please_wait": MessageLookupByLibrary.simpleMessage(
             "Please wait, the administrator will grant you permission soon."),
         "resend_code": MessageLookupByLibrary.simpleMessage("Resend Code"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "send_code": MessageLookupByLibrary.simpleMessage("Send Code"),
+        "send_email": MessageLookupByLibrary.simpleMessage("Send Email"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "shop_name": MessageLookupByLibrary.simpleMessage("Shop Name"),
         "verification_message": MessageLookupByLibrary.simpleMessage(
             "We will send a code to verify the mobile number below"),

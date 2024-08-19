@@ -56,45 +56,45 @@ class SignupCubit extends Cubit<SignupStates> {
   }
 
 
-  void register({
-    required String name,
-    required String shopName,
-    required String address,
-    required String phone,
-    required String password,
-    required String confirmationPassword,
-    required File? image,
-  }) async {
-    final formData = FormData.fromMap({
-      'name': name,
-      'shop_name': shopName,
-      'address': address,
-      'mobile_number': phone,
-      'password': password,
-      'confirm_password': confirmationPassword,
-      if (image != null)
-        'profile_picture': await MultipartFile.fromFile(
-          image.path,
-          filename: 'profile_picture.jpg',
-        ),
-    });
-
-    try {
-      emit(RegisterLoadingState());
-
-
-      Response response = await DioHelper.postData(
-        path: ApiConst.register,
-        data: formData,
-      );
-
-      print(response.statusCode);
-      print(response.data['message']);
-      emit(RegisterSuccessState());
-    } catch (error) {
-      print(error.toString());
-      emit(RegisterErrorState());
-    }
-  }
+  // void register({
+  //   required String name,
+  //   required String shopName,
+  //   required String address,
+  //   required String phone,
+  //   required String password,
+  //   required String confirmationPassword,
+  //   required File? image,
+  // }) async {
+  //   final formData = FormData.fromMap({
+  //     'name': name,
+  //     'shop_name': shopName,
+  //     'address': address,
+  //     'mobile_number': phone,
+  //     'password': password,
+  //     'confirm_password': confirmationPassword,
+  //     if (image != null)
+  //       'profile_picture': await MultipartFile.fromFile(
+  //         image.path,
+  //         filename: 'profile_picture.jpg',
+  //       ),
+  //   });
+  //
+  //   try {
+  //     emit(RegisterLoadingState());
+  //
+  //
+  //     Response response = await DioHelper.postData(
+  //       path: ApiConst.register,
+  //       data: formData,
+  //     );
+  //
+  //     print(response.statusCode);
+  //     print(response.data['message']);
+  //     emit(RegisterSuccessState());
+  //   } catch (error) {
+  //     print(error.toString());
+  //     emit(RegisterErrorState());
+  //   }
+  // }
 
 }

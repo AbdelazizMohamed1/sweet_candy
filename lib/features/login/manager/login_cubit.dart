@@ -31,28 +31,28 @@ class LoginCubit extends Cubit<LoginStates> {
     emit(ToggleBetweenPasswordState());
   }
 
-  void login({
-    required String phone,
-    required String password,
-  }) async {
-    final formData = FormData.fromMap({
-      'mobile_number': phone,
-      'password': password,
-    });
-
-    try {
-      emit(LoginLoadingState());
-      Response response = await DioHelper.postData(
-        path: ApiConst.login,
-        data: formData,
-      );
-      print(response.statusCode);
-      print(response.data['message']);
-      emit(LoginSuccessState());
-    } catch (error) {
-      print(error.toString());
-      emit(LoginErrorState());
-    }
-  }
+  // void login({
+  //   required String phone,
+  //   required String password,
+  // }) async {
+  //   final formData = FormData.fromMap({
+  //     'mobile_number': phone,
+  //     'password': password,
+  //   });
+  //
+  //   try {
+  //     emit(LoginLoadingState());
+  //     Response response = await DioHelper.postData(
+  //       path: ApiConst.login,
+  //       data: formData,
+  //     );
+  //     print(response.statusCode);
+  //     print(response.data['message']);
+  //     emit(LoginSuccessState());
+  //   } catch (error) {
+  //     print(error.toString());
+  //     emit(LoginErrorState());
+  //   }
+  // }
 
 }

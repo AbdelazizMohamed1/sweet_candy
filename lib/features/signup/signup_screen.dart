@@ -11,6 +11,8 @@ import 'package:sweet_candy/features/signup/manager/signup_states.dart';
 import 'package:sweet_candy/shared/components/components.dart';
 import 'package:sweet_candy/shared/const_assets.dart';
 import 'package:sweet_candy/shared/height.dart';
+import 'package:sweet_candy/shared/widgets/back_arrow.dart';
+import 'package:sweet_candy/shared/widgets/back_arrow_text_icon.dart';
 import 'package:sweet_candy/shared/widgets/default_form_field.dart';
 import 'package:sweet_candy/shared/widgets/default_material_button.dart';
 import '../../generated/l10n.dart';
@@ -34,17 +36,7 @@ class SignupScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          Components.navigateBack(context: context);
-                        },
-                        icon: const Icon(Icons.arrow_back_outlined),
-                      ),
-                      Text(S.of(context).create_new_account)
-                    ],
-                  ),
+                  BackArrowTextIcon(text: S.of(context).create_new_account,hasIcon: false,hasArrow: true,hasText: true,),
                   height40,
                   GestureDetector(
                     onTap: () {
@@ -171,15 +163,15 @@ class SignupScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: defaultMaterialButton(
                       onPressed: () {
-                        cubit.register(
-                          name: userNameController.text,
-                          shopName: shopNameController.text,
-                          address: addressController.text,
-                          phone: phoneController.text,
-                          password: passwordController.text,
-                          confirmationPassword: rePasswordController.text,
-                          image: cubit.image
-                        );
+                        // cubit.register(
+                        //   name: userNameController.text,
+                        //   shopName: shopNameController.text,
+                        //   address: addressController.text,
+                        //   phone: phoneController.text,
+                        //   password: passwordController.text,
+                        //   confirmationPassword: rePasswordController.text,
+                        //   image: cubit.image
+                        // );
                       },
                       text: S.of(context).confirm,
                       widget: Container(),

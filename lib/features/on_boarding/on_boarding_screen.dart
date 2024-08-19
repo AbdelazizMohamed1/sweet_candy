@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sweet_candy/core/models/on_boarding_model.dart';
-import 'package:sweet_candy/features/home/home_screen.dart';
+import 'package:sweet_candy/features/home/home_layout.dart';
 import 'package:sweet_candy/features/login/login_or_signup_screen.dart';
 import 'package:sweet_candy/features/login/login_screen.dart';
 import 'package:sweet_candy/features/on_boarding/manager/on_boarding_cubit.dart';
@@ -35,7 +36,7 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
-  var boardingController = PageController();
+  PageController boardingController = PageController();
 
   bool isLast = false;
 
@@ -49,7 +50,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     //
     // });
   }
-
+  List<BoardingModel> boarding = [
+    BoardingModel(image: 'images/logo.png', title: 'Order your shipment now', body: 'We are here to make the ordering process as easy as possible.'),
+    BoardingModel(image: 'images/onBoarding2.png', title: 'Fastest delivery service', body: 'We are here to make the ordering process as easy as possible.'),
+    BoardingModel(image: 'images/onBoarding3.png', title: 'Receive your shipment safely', body: 'We are here to make the ordering process as easy as possible.'),
+  ];
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<OnBoardingCubit,OnBoardingStates>(
@@ -57,17 +62,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
       },
       builder: (context, state) {
-        OnBoardingCubit cubit = OnBoardingCubit.get(context);
+
         return Scaffold(
             backgroundColor: onBoardingBackground,
             body: SafeArea(
               child: Column(
                 children: [
-                  cubit.onBoardingData.isNotEmpty ?
                   Expanded(
                     child: PageView.builder(
                       onPageChanged: (index) {
-                        if (index == cubit.onBoardingData.length - 1) {
+                        if (index == boarding.length - 1) {
                           setState(() {
                             isLast = true;
                           });
@@ -79,10 +83,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       },
                       controller: boardingController,
                       itemBuilder: (context, index) =>
-                          builtBoardingItem(cubit.onBoardingData,index),
-                      itemCount: cubit.onBoardingData.length,
+                          builtBoardingItem(index),
+                      itemCount: boarding.length,
                     ),
-                  ) : const Center(child: CircularProgressIndicator(),),
+                  ) ,
                   height24,
                   Padding(
                     padding: const EdgeInsets.only(bottom: 40, left: 40, right: 40),
@@ -104,7 +108,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     );
   }
 
-  Widget builtBoardingItem(List<OnBoardingModel> model,int index) => Column(
+  Widget builtBoardingItem(int index) => Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Offstage(
@@ -134,16 +138,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           ),
           const Spacer(),
           Center(
-            child: Image.network(
-              model[index].imageUrl!,
+            child: Image.asset(
+             boarding[index].image,
               fit: BoxFit.cover,
             ),
           ),
           const Spacer(),
-          Text(model[index].mainTitle!, style: text24W700(context)),
+          Text(boarding[index].title, style: text24W700(context)),
           height24,
           Text(
-            model[index].details!,
+            boarding[index].body,
             style: text16W400(context),
             textAlign: TextAlign.center,
           ),

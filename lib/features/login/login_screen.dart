@@ -95,7 +95,7 @@ class LoginScreen extends StatelessWidget {
                             height32,
                             defaultMaterialButton(
                               onPressed: () {
-                               cubit.login(phone: phoneController.text, password: passwordController.text);
+                               // cubit.login(phone: phoneController.text, password: passwordController.text);
                               },
                               text: S.of(context).LoginSpace,
                               widget: Container(),

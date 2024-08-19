@@ -13,15 +13,15 @@ class OnBoardingCubit extends Cubit<OnBoardingStates> {
   OnBoardingModel? onBoardingModel;
 
   List<OnBoardingModel> onBoardingData = [];
-  void getOnBoardingData(){
-    DioHelper.getData(path: ApiConst.splash).then((value) {
-     if(value.statusCode == 200){
-       onBoardingData = (value.data as List).map((json) => OnBoardingModel.fromJson(json)).toList();
-      emit(OnBoardingGetSuccessState());
-     }
-    }).catchError((error) {
-      print("Error: ${error.toString()}");
-      emit(OnBoardingGetErrorState());
-    });
-  }
+  // void getOnBoardingData(){
+  //   DioHelper.getData(path: ApiConst.splash).then((value) {
+  //    if(value.statusCode == 200){
+  //      onBoardingData = (value.data as List).map((json) => OnBoardingModel.fromJson(json)).toList();
+  //     emit(OnBoardingGetSuccessState());
+  //    }
+  //   }).catchError((error) {
+  //     print("Error: ${error.toString()}");
+  //     emit(OnBoardingGetErrorState());
+  //   });
+  // }
 }

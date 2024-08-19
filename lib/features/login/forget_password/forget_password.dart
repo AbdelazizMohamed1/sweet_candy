@@ -54,6 +54,7 @@ class ForgetPassword extends StatelessWidget {
                           text: countryController.text,
                           onTap: () {
                             showCountryPicker(
+                              countryFilter: ['PS','IL'],
                               context: context,
                               onSelect: (value) {
                                 countryController.text =
