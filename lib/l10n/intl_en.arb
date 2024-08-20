@@ -34,5 +34,8 @@
   "my_orders": "My Orders",
   "search": "Search",
   "account_information": "Account Information",
-  "settings": "Settings"
+  "settings": "Settings",
+  "categories": "Categories",
+  "most_popular_product": "Most Popular Product",
+  "email": "Email"
 }

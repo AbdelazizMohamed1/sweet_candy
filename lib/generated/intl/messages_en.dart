@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("The Address"),
         "already_have_account": MessageLookupByLibrary.simpleMessage(
             "Do you already have an account ? "),
+        "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
@@ -46,10 +47,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create new password"),
         "did_not_receive_code":
             MessageLookupByLibrary.simpleMessage("Didn’t receive a code ? "),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
         "enter_4_digit_code": MessageLookupByLibrary.simpleMessage(
             "Please enter the 4 digit code sent to your mobile number"),
         "enter_phone_number":
             MessageLookupByLibrary.simpleMessage("Enter your phone number"),
+        "most_popular_product":
+            MessageLookupByLibrary.simpleMessage("Most Popular Product"),
         "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "new_password": MessageLookupByLibrary.simpleMessage("New Password"),

@@ -409,6 +409,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message(
+      'Categories',
+      name: 'categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Most Popular Product`
+  String get most_popular_product {
+    return Intl.message(
+      'Most Popular Product',
+      name: 'most_popular_product',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

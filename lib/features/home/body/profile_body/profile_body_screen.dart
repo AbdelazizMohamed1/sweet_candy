@@ -1,10 +1,118 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sweet_candy/shared/height.dart';
+import 'package:sweet_candy/shared/text.dart';
+import 'package:sweet_candy/shared/widgets/default_material_button.dart';
+import 'package:sweet_candy/shared/widgets/hint_text.dart';
+import 'package:sweet_candy/shared/width.dart';
+
+import '../../../../generated/l10n.dart';
+import '../../../../shared/colors.dart';
+import '../../../../shared/const_assets.dart';
 
 class ProfileBodyScreen extends StatelessWidget {
   const ProfileBodyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Profile Screen'));
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          height85,
+          Center(
+            child: Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: const AssetImage(ConstAssets.user),
+                      fit: BoxFit.cover),
+                  shape: BoxShape.circle),
+            ),
+          ),
+          height64,
+          Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                iconAndText(
+                  text: S.of(context).name,
+                  imagePath: 'images/user_name.svg',
+                ),
+                height10,
+                Text(
+                  'Abdelaziz Mohamed Ramadan',
+                  style: text16W400(context),
+                ),
+                height20,
+                iconAndText(
+                  text: S.of(context).phone,
+                  imagePath: 'images/phone.svg',
+                ),
+                height10,
+                Text(
+                  '+970593114035',
+                  style: text16W400(context),
+                ),
+                height20,
+                iconAndText(
+                  text: S.of(context).email,
+                  imagePath: 'images/shop_name.svg',
+                ),
+                height10,
+                Text(
+                  'ae1744@fayoum.edu.eg',
+                  style: text16W400(context),
+                ),
+                height20,
+              ],
+            ),
+          ),
+          height64,
+          Container(
+            height: 50,
+            width: fullWidth(context: context),
+            decoration: BoxDecoration(
+              border: Border.all(color: mainColor),
+              borderRadius: BorderRadius.circular(10)
+            ),
+            child: MaterialButton(
+              onPressed: () {
+
+            },child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset('images/sign_out.svg'),
+                width10,
+                Text('Sign Out',style: text16W600(context,color: mainColor),),
+              ],
+            ),
+
+            ),
+          )
+        ],
+      ),
+    );
   }
+
+  Widget iconAndText({required String text, required String imagePath}) => Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SvgPicture.asset(
+            imagePath,
+            colorFilter: ColorFilter.mode(
+              gray,
+              BlendMode.srcIn,
+            ),
+          ),
+          width10,
+          HintText(
+            text: text,
+          )
+        ],
+      );
 }

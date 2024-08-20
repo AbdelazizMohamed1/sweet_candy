@@ -34,5 +34,8 @@
   "my_orders": "طلباتي",
   "search": "بحث",
   "account_information": "معلومات الحساب",
-  "settings": "الإعدادات"
+  "settings": "الإعدادات",
+  "categories": "التصنيفات",
+  "most_popular_product": "المنتج الأكثر شهرة",
+  "email": "البريد الإلكتروني"
 }

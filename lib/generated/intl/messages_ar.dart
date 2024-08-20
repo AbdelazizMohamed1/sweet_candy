@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "already_have_account":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل ؟ "),
+        "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
@@ -46,10 +47,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إنشاء كلمة مرور جديدة"),
         "did_not_receive_code":
             MessageLookupByLibrary.simpleMessage("لم تتلقَ رمزًا ؟ "),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "enter_4_digit_code": MessageLookupByLibrary.simpleMessage(
             "يرجى إدخال الرمز المكون من 4 أرقام الذي تم إرساله إلى رقم هاتفك المحمول"),
         "enter_phone_number":
             MessageLookupByLibrary.simpleMessage("أدخل رقم هاتفك"),
+        "most_popular_product":
+            MessageLookupByLibrary.simpleMessage("المنتج الأكثر شهرة"),
         "my_orders": MessageLookupByLibrary.simpleMessage("طلباتي"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "new_password":

@@ -23,49 +23,70 @@ class HomeLayout extends StatelessWidget {
           HomeCubit cubit = HomeCubit.get(context);
 
           List<Widget> bottomNavBarItems = [
-            bottomNavItem(
-              imagePath: cubit.bodyIndex == 0
-                  ? 'images/home_main.svg'
-                  : 'images/home.svg',
-              onTap: () {
-                bodyController.jumpToPage(0);
-                print('${cubit.bodyIndex} body');
-              },
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  bodyController.jumpToPage(0);
+                  print('${cubit.bodyIndex} body');
+                },
+                child: bottomNavItem(
+                  imagePath: cubit.bodyIndex == 0
+                      ? 'images/home_main.svg'
+                      : 'images/home.svg',
+
+                ),
+              ),
             ),
-            const Spacer(),
-            bottomNavItem(
-              imagePath: cubit.bodyIndex == 1
-                  ? 'images/order_main.svg'
-                  : 'images/order.svg',
-              onTap: () {
-                bodyController.jumpToPage(1);
-                print('${cubit.bodyIndex} body');
-              },
+
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  bodyController.jumpToPage(1);
+                  print('${cubit.bodyIndex} body');
+                },
+                child: bottomNavItem(
+                  imagePath: cubit.bodyIndex == 1
+                      ? 'images/order_main.svg'
+                      : 'images/order.svg',
+
+                ),
+              ),
             ),
-            const Spacer(),
-            bottomNavItem(
-              imagePath: cubit.bodyIndex == 2
-                  ? 'images/search_main.svg'
-                  : 'images/search.svg',
-              onTap: () {
-                bodyController.jumpToPage(2);
-                print('${cubit.bodyIndex} body');
-              },
+
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  bodyController.jumpToPage(2);
+                  print('${cubit.bodyIndex} body');
+                },
+                child: bottomNavItem(
+                  imagePath: cubit.bodyIndex == 2
+                      ? 'images/search_main.svg'
+                      : 'images/search.svg',
+
+                ),
+              ),
             ),
-            const Spacer(),
-            bottomNavItem(
-              imagePath: cubit.bodyIndex == 3
-                  ? 'images/profile_main.svg'
-                  : 'images/profile.svg',
-              onTap: () {
-                bodyController.jumpToPage(3);
-                print('${cubit.bodyIndex} body');
-              },
+
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  bodyController.jumpToPage(3);
+                  print('${cubit.bodyIndex} body');
+                },
+                child: bottomNavItem(
+                  imagePath: cubit.bodyIndex == 3
+                      ? 'images/profile_main.svg'
+                      : 'images/profile.svg',
+
+                ),
+              ),
             )
           ];
           Widget bottomNavBar(int index) => Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.symmetric(vertical: 30),
                 child: Row(
+
                   children: bottomNavBarItems,
                 ),
               );
@@ -103,31 +124,33 @@ class HomeLayout extends StatelessWidget {
                   },
                   allowImplicitScrolling: true,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) =>  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(25.0),
-                        child: Row(
-                          children: [
-                            Offstage(
-                                offstage: cubit.bodyIndex != 0,
-                                child: SvgPicture.asset('images/reward.svg')),
-                            width24,
-                            const Spacer(),
-                            Offstage(
-                                offstage: cubit.bodyIndex == 0,
-                                child: title(cubit.bodyIndex)),
-                            const Spacer(),
-                            GestureDetector(
-                                onTap: () {
-                              Components.navigateTo(context: context, widget: const SettingScreen());
-                                },
-                                child: SvgPicture.asset('images/setting.svg')),
-                          ],
+                  itemBuilder: (context, index) =>  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: Row(
+                            children: [
+                              Offstage(
+                                  offstage: cubit.bodyIndex != 0,
+                                  child: SvgPicture.asset('images/reward.svg')),
+                              width24,
+                              const Spacer(),
+                              Offstage(
+                                  offstage: cubit.bodyIndex == 0,
+                                  child: title(cubit.bodyIndex)),
+                              const Spacer(),
+                              GestureDetector(
+                                  onTap: () {
+                                Components.navigateTo(context: context, widget: const SettingScreen());
+                                  },
+                                  child: SvgPicture.asset('images/setting.svg')),
+                            ],
+                          ),
                         ),
-                      ),
-                      cubit.body[cubit.bodyIndex],
-                    ],
+                        cubit.body[cubit.bodyIndex],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -143,11 +166,11 @@ class HomeLayout extends StatelessWidget {
 }
 
 class bottomNavItem extends StatelessWidget {
-  bottomNavItem({super.key, required this.imagePath, this.onTap});
+  bottomNavItem({super.key, required this.imagePath});
   final String imagePath;
-  final void Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(onTap: onTap, child: SvgPicture.asset(imagePath));
+    return SvgPicture.asset(imagePath);
   }
 }
