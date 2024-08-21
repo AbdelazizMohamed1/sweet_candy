@@ -35,7 +35,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "already_have_account":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل ؟ "),
+        "are_you_sure_logout": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد أنك تريد \nتسجيل الخروج؟"),
+        "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
+        "checkout_now": MessageLookupByLibrary.simpleMessage("الدفع الآن"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
@@ -52,6 +56,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "يرجى إدخال الرمز المكون من 4 أرقام الذي تم إرساله إلى رقم هاتفك المحمول"),
         "enter_phone_number":
             MessageLookupByLibrary.simpleMessage("أدخل رقم هاتفك"),
+        "enter_your_product_name":
+            MessageLookupByLibrary.simpleMessage("أدخل اسم المنتج"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "most_popular_product":
             MessageLookupByLibrary.simpleMessage("المنتج الأكثر شهرة"),
         "my_orders": MessageLookupByLibrary.simpleMessage("طلباتي"),
@@ -59,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "new_password":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
         "no_account": MessageLookupByLibrary.simpleMessage("لا تملك حساب ؟ "),
+        "order_summary": MessageLookupByLibrary.simpleMessage("ملخص الطلب"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "password_must_be_different": MessageLookupByLibrary.simpleMessage(
             "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمات المرور المستخدمة سابقًا."),
@@ -73,12 +81,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إرسال بريد إلكتروني"),
         "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "shop_name": MessageLookupByLibrary.simpleMessage("اسم المتجر"),
+        "total_price": MessageLookupByLibrary.simpleMessage("السعر الإجمالي"),
         "verification_message": MessageLookupByLibrary.simpleMessage(
             "سنرسل رمزًا للتحقق من رقم الهاتف أدناه"),
         "verify": MessageLookupByLibrary.simpleMessage("تحقق"),
         "verify_your_phone_number":
             MessageLookupByLibrary.simpleMessage("تحقق من رقم هاتفك"),
         "wait_permission":
-            MessageLookupByLibrary.simpleMessage("انتظر للحصول على الإذن")
+            MessageLookupByLibrary.simpleMessage("انتظر للحصول على الإذن"),
+        "your_orders_yet": MessageLookupByLibrary.simpleMessage(
+            "لم تقم بأي طلبات بعد. عند وضع\nطلبك الأول، سيظهر هنا.")
       };
 }

@@ -37,5 +37,13 @@
   "settings": "الإعدادات",
   "categories": "التصنيفات",
   "most_popular_product": "المنتج الأكثر شهرة",
-  "email": "البريد الإلكتروني"
+  "email": "البريد الإلكتروني",
+  "logout": "تسجيل الخروج",
+  "cancel": "إلغاء",
+  "are_you_sure_logout": "هل أنت متأكد أنك تريد \nتسجيل الخروج؟",
+  "enter_your_product_name": "أدخل اسم المنتج",
+  "order_summary": "ملخص الطلب",
+  "total_price": "السعر الإجمالي",
+  "checkout_now": "الدفع الآن",
+  "your_orders_yet": "لم تقم بأي طلبات بعد. عند وضع\nطلبك الأول، سيظهر هنا."
 }

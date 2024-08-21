@@ -9,10 +9,19 @@ import 'package:sweet_candy/shared/width.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../shared/colors.dart';
 import '../../../../shared/const_assets.dart';
+import '../../widgets/dialog.dart';
 
 class ProfileBodyScreen extends StatelessWidget {
   const ProfileBodyScreen({super.key});
-
+  void _showLogoutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return DialogComponent(text: S.of(context).are_you_sure_logout, buttonTwo: S.of(context).logout,onPressed: () {
+        },);
+      },
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,9 +35,9 @@ class ProfileBodyScreen extends StatelessWidget {
             child: Container(
               width: 100,
               height: 100,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: const AssetImage(ConstAssets.user),
+                      image: AssetImage(ConstAssets.user),
                       fit: BoxFit.cover),
                   shape: BoxShape.circle),
             ),
@@ -76,21 +85,23 @@ class ProfileBodyScreen extends StatelessWidget {
             height: 50,
             width: fullWidth(context: context),
             decoration: BoxDecoration(
-              border: Border.all(color: mainColor),
-              borderRadius: BorderRadius.circular(10)
-            ),
+                border: Border.all(color: mainColor),
+                borderRadius: BorderRadius.circular(10)),
             child: MaterialButton(
               onPressed: () {
-
-            },child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset('images/sign_out.svg'),
-                width10,
-                Text('Sign Out',style: text16W600(context,color: mainColor),),
-              ],
-            ),
-
+                _showLogoutDialog(context);
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset('images/sign_out.svg'),
+                  width10,
+                  Text(
+                    'Sign Out',
+                    style: text16W600(context, color: mainColor),
+                  ),
+                ],
+              ),
             ),
           )
         ],

@@ -14,8 +14,8 @@ class HomeCubit extends Cubit<HomeStates> {
   int bodyIndex = 0;
   List<Widget> body = [
      HomeBodyScreen(),
-    const OrderBodyScreen(),
-    const SearchBodyScreen(),
+     OrderBodyScreen(),
+     SearchBodyScreen(),
     const ProfileBodyScreen()
   ];
 

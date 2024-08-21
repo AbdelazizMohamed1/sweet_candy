@@ -35,7 +35,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("The Address"),
         "already_have_account": MessageLookupByLibrary.simpleMessage(
             "Do you already have an account ? "),
+        "are_you_sure_logout": MessageLookupByLibrary.simpleMessage(
+            "Are You Sure You Want \nTo Logout?"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "checkout_now": MessageLookupByLibrary.simpleMessage("Checkout Now"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
@@ -52,6 +56,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter the 4 digit code sent to your mobile number"),
         "enter_phone_number":
             MessageLookupByLibrary.simpleMessage("Enter your phone number"),
+        "enter_your_product_name":
+            MessageLookupByLibrary.simpleMessage("Enter Your Product Name"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "most_popular_product":
             MessageLookupByLibrary.simpleMessage("Most Popular Product"),
         "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),
@@ -59,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
         "no_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
+        "order_summary": MessageLookupByLibrary.simpleMessage("Order Summary"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_must_be_different": MessageLookupByLibrary.simpleMessage(
             "Your new password must be different from the previously used passwords."),
@@ -71,12 +79,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "send_email": MessageLookupByLibrary.simpleMessage("Send Email"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "shop_name": MessageLookupByLibrary.simpleMessage("Shop Name"),
+        "total_price": MessageLookupByLibrary.simpleMessage("Total Price"),
         "verification_message": MessageLookupByLibrary.simpleMessage(
             "We will send a code to verify the mobile number below"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),
         "verify_your_phone_number":
             MessageLookupByLibrary.simpleMessage("Verify your phone number"),
         "wait_permission":
-            MessageLookupByLibrary.simpleMessage("Wait for permission")
+            MessageLookupByLibrary.simpleMessage("Wait for permission"),
+        "your_orders_yet": MessageLookupByLibrary.simpleMessage(
+            "Your orders yet. When you place your\nfirst order, it will appear here.")
       };
 }

@@ -8,6 +8,7 @@ import 'package:sweet_candy/shared/widgets/text_button_under_line.dart';
 import 'package:sweet_candy/shared/widgets/text_under_line.dart';
 import 'package:sweet_candy/shared/width.dart';
 import '../../../../generated/l10n.dart';
+import '../../widgets/product_item.dart';
 
 class HomeBodyScreen extends StatelessWidget {
   HomeBodyScreen({super.key});
@@ -121,89 +122,14 @@ class HomeBodyScreen extends StatelessWidget {
               crossAxisCount: 2,
             childAspectRatio: 0.65
           ),
-          itemBuilder: (context, index) => productItem(context: context),
+          itemBuilder: (context, index) => const ProductItem(),
           itemCount: 4,
           shrinkWrap: true,
-         padding: EdgeInsets.only(left: 20,right: 20,bottom: 10),
+         padding: const EdgeInsets.only(left: 20,right: 20,bottom: 10),
          physics: const NeverScrollableScrollPhysics(),
         )
       ],
     );
   }
-  Widget productItem({required context}) => SizedBox(
-        width: fullWidth(context: context) / 2,
-        child: Card(
-          color: white,
-          elevation: 5,
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(child: Image.asset('images/product1.png')),
-                height16,
-                const Text('Heinz Tomato Sauce 360 gm Save 1 \$'),
-                Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.remove,
-                        color: Colors.red,
-                      ),
-                    ),
-                    const Spacer(),
-                    const Text('0'),
-                    const Spacer(),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.add,
-                        color: Colors.green,
-                      ),
-                    ),
-                  ],
-                ),
-                Text(
-                  '235 \$',
-                  style: text10W700(context),
-                ),
-                height16,
-                Row(
-                  children: [
-                    Text(
-                      '250',
-                      style: TextStyle(
-                          fontSize: 8,
-                          fontWeight: FontWeight.w700,
-                          color: green,
-                          decoration: TextDecoration.lineThrough,
-                          decorationColor: green,
-                          decorationThickness: 2),
-                    ),
-                    width10,
-                    Text(
-                      '10%',
-                      style: TextStyle(
-                        fontSize: 8,
-                        fontWeight: FontWeight.w700,
-                        color: green,
-                      ),
-                    ),
-                    width10,
-                    Text(
-                      'OFF',
-                      style: TextStyle(
-                        fontSize: 8,
-                        fontWeight: FontWeight.w700,
-                        color: green,
-                      ),
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
-        ),
-      );
+
 }

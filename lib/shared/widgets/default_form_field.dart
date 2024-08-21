@@ -17,7 +17,8 @@ Widget defaultTextFormField({
   bool readOnly = false,
   FocusNode? focusNode,
   double borderRadius = 10.0,
-  TextAlign textAlign = TextAlign.start
+  TextAlign textAlign = TextAlign.start,
+  Color? color
 }) =>
     TextFormField(
         textAlign: textAlign,
@@ -33,14 +34,14 @@ Widget defaultTextFormField({
         decoration: InputDecoration(
           contentPadding: const EdgeInsetsDirectional.symmetric(vertical: 11,horizontal: 10),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: mainColor, width: 1.0),
+            borderSide: BorderSide(color: color??mainColor, width: 1.0),
             borderRadius: BorderRadius.circular(10)
           ),
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: mainColor, width: 1.0),
               borderRadius: BorderRadius.circular(10)
           ),
-          errorBorder: OutlineInputBorder(
+          errorBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.red, width: 1.0),
           ),
           hintText: hintText,

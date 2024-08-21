@@ -37,5 +37,14 @@
   "settings": "Settings",
   "categories": "Categories",
   "most_popular_product": "Most Popular Product",
-  "email": "Email"
+  "email": "Email",
+  "logout": "Logout",
+  "cancel": "Cancel",
+  "are_you_sure_logout": "Are You Sure You Want \nTo Logout?",
+  "enter_your_product_name": "Enter Your Product Name",
+  "order_summary": "Order Summary",
+  "total_price": "Total Price",
+  "checkout_now": "Checkout Now",
+  "your_orders_yet": "Your orders yet. When you place your\nfirst order, it will appear here."
+
 }

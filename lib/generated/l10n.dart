@@ -439,6 +439,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are You Sure You Want \nTo Logout?`
+  String get are_you_sure_logout {
+    return Intl.message(
+      'Are You Sure You Want \nTo Logout?',
+      name: 'are_you_sure_logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Your Product Name`
+  String get enter_your_product_name {
+    return Intl.message(
+      'Enter Your Product Name',
+      name: 'enter_your_product_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Summary`
+  String get order_summary {
+    return Intl.message(
+      'Order Summary',
+      name: 'order_summary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Price`
+  String get total_price {
+    return Intl.message(
+      'Total Price',
+      name: 'total_price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checkout Now`
+  String get checkout_now {
+    return Intl.message(
+      'Checkout Now',
+      name: 'checkout_now',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your orders yet. When you place your\nfirst order, it will appear here.`
+  String get your_orders_yet {
+    return Intl.message(
+      'Your orders yet. When you place your\nfirst order, it will appear here.',
+      name: 'your_orders_yet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
