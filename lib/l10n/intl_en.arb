@@ -45,6 +45,21 @@
   "order_summary": "Order Summary",
   "total_price": "Total Price",
   "checkout_now": "Checkout Now",
-  "your_orders_yet": "Your orders yet. When you place your\nfirst order, it will appear here."
+  "your_orders_yet": "Your orders yet. When you place your\nfirst order, it will appear here.",
+  "edit_personal_data": "Edit Personal Data",
+  "points": "Points",
+  "get_help": "Get Help",
+  "notification": "Notification",
+  "contact_us": "Contact Us",
+  "about_us": "About Us",
+  "language": "Language",
+  "checkout": "Checkout",
+  "delete_account": "Delete Account",
+  "are_you_sure_delete_account": "Are You Sure You Want to Delete Account?",
+  "delete": "Delete",
+  "about_our_app": "About Our App",
+  "we_are_here_to_help_you": "We Are Here to Help You",
+  "for_contact_us": "For Contact Us",
+  "your_points": "Your points"
 
 }

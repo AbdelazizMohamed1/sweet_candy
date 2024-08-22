@@ -41,9 +41,9 @@ dependencies:
   country_picker: ^2.0.26
   dio: ^5.5.0+1
   pin_code_fields: ^8.0.1
+  url_launcher: ^6.3.0
   flutter_localizations:
     sdk: flutter
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -54,6 +54,13 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/candy.png"
+  android_icon: true
+  ios_icon: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

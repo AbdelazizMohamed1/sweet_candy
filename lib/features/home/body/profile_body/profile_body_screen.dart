@@ -10,6 +10,7 @@ import '../../../../generated/l10n.dart';
 import '../../../../shared/colors.dart';
 import '../../../../shared/const_assets.dart';
 import '../../widgets/dialog.dart';
+import '../../widgets/icon_and_text.dart';
 
 class ProfileBodyScreen extends StatelessWidget {
   const ProfileBodyScreen({super.key});
@@ -47,7 +48,7 @@ class ProfileBodyScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                iconAndText(
+                IconAndText(
                   text: S.of(context).name,
                   imagePath: 'images/user_name.svg',
                 ),
@@ -57,23 +58,13 @@ class ProfileBodyScreen extends StatelessWidget {
                   style: text16W400(context),
                 ),
                 height20,
-                iconAndText(
+                IconAndText(
                   text: S.of(context).phone,
                   imagePath: 'images/phone.svg',
                 ),
                 height10,
                 Text(
                   '+970593114035',
-                  style: text16W400(context),
-                ),
-                height20,
-                iconAndText(
-                  text: S.of(context).email,
-                  imagePath: 'images/shop_name.svg',
-                ),
-                height10,
-                Text(
-                  'ae1744@fayoum.edu.eg',
                   style: text16W400(context),
                 ),
                 height20,
@@ -109,21 +100,5 @@ class ProfileBodyScreen extends StatelessWidget {
     );
   }
 
-  Widget iconAndText({required String text, required String imagePath}) => Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SvgPicture.asset(
-            imagePath,
-            colorFilter: ColorFilter.mode(
-              gray,
-              BlendMode.srcIn,
-            ),
-          ),
-          width10,
-          HintText(
-            text: text,
-          )
-        ],
-      );
+
 }

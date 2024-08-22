@@ -519,6 +519,156 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit Personal Data`
+  String get edit_personal_data {
+    return Intl.message(
+      'Edit Personal Data',
+      name: 'edit_personal_data',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Points`
+  String get points {
+    return Intl.message(
+      'Points',
+      name: 'points',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Help`
+  String get get_help {
+    return Intl.message(
+      'Get Help',
+      name: 'get_help',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Us`
+  String get contact_us {
+    return Intl.message(
+      'Contact Us',
+      name: 'contact_us',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About Us`
+  String get about_us {
+    return Intl.message(
+      'About Us',
+      name: 'about_us',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checkout`
+  String get checkout {
+    return Intl.message(
+      'Checkout',
+      name: 'checkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Account`
+  String get delete_account {
+    return Intl.message(
+      'Delete Account',
+      name: 'delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are You Sure You Want to Delete Account?`
+  String get are_you_sure_delete_account {
+    return Intl.message(
+      'Are You Sure You Want to Delete Account?',
+      name: 'are_you_sure_delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About Our App`
+  String get about_our_app {
+    return Intl.message(
+      'About Our App',
+      name: 'about_our_app',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We Are Here to Help You`
+  String get we_are_here_to_help_you {
+    return Intl.message(
+      'We Are Here to Help You',
+      name: 'we_are_here_to_help_you',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `For Contact Us`
+  String get for_contact_us {
+    return Intl.message(
+      'For Contact Us',
+      name: 'for_contact_us',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your points`
+  String get your_points {
+    return Intl.message(
+      'Your points',
+      name: 'your_points',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

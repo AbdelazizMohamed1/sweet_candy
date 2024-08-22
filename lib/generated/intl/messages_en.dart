@@ -30,27 +30,38 @@ class MessageLookup extends MessageLookupByLibrary {
         "Password": MessageLookupByLibrary.simpleMessage("Password"),
         "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "Signup": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "about_our_app": MessageLookupByLibrary.simpleMessage("About Our App"),
+        "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
         "account_information":
             MessageLookupByLibrary.simpleMessage("Account Information"),
         "address": MessageLookupByLibrary.simpleMessage("The Address"),
         "already_have_account": MessageLookupByLibrary.simpleMessage(
             "Do you already have an account ? "),
+        "are_you_sure_delete_account": MessageLookupByLibrary.simpleMessage(
+            "Are You Sure You Want to Delete Account?"),
         "are_you_sure_logout": MessageLookupByLibrary.simpleMessage(
             "Are You Sure You Want \nTo Logout?"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "checkout_now": MessageLookupByLibrary.simpleMessage("Checkout Now"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
         "contact_admin":
             MessageLookupByLibrary.simpleMessage("For contact with admin"),
+        "contact_us": MessageLookupByLibrary.simpleMessage("Contact Us"),
         "create_new_account":
             MessageLookupByLibrary.simpleMessage("Create new account"),
         "create_new_password":
             MessageLookupByLibrary.simpleMessage("Create new password"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+        "delete_account":
+            MessageLookupByLibrary.simpleMessage("Delete Account"),
         "did_not_receive_code":
             MessageLookupByLibrary.simpleMessage("Didn’t receive a code ? "),
+        "edit_personal_data":
+            MessageLookupByLibrary.simpleMessage("Edit Personal Data"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "enter_4_digit_code": MessageLookupByLibrary.simpleMessage(
             "Please enter the 4 digit code sent to your mobile number"),
@@ -58,6 +69,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your phone number"),
         "enter_your_product_name":
             MessageLookupByLibrary.simpleMessage("Enter Your Product Name"),
+        "for_contact_us":
+            MessageLookupByLibrary.simpleMessage("For Contact Us"),
+        "get_help": MessageLookupByLibrary.simpleMessage("Get Help"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "most_popular_product":
             MessageLookupByLibrary.simpleMessage("Most Popular Product"),
@@ -66,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
         "no_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "order_summary": MessageLookupByLibrary.simpleMessage("Order Summary"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_must_be_different": MessageLookupByLibrary.simpleMessage(
@@ -73,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "please_wait": MessageLookupByLibrary.simpleMessage(
             "Please wait, the administrator will grant you permission soon."),
+        "points": MessageLookupByLibrary.simpleMessage("Points"),
         "resend_code": MessageLookupByLibrary.simpleMessage("Resend Code"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "send_code": MessageLookupByLibrary.simpleMessage("Send Code"),
@@ -87,7 +104,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Verify your phone number"),
         "wait_permission":
             MessageLookupByLibrary.simpleMessage("Wait for permission"),
+        "we_are_here_to_help_you":
+            MessageLookupByLibrary.simpleMessage("We Are Here to Help You"),
         "your_orders_yet": MessageLookupByLibrary.simpleMessage(
-            "Your orders yet. When you place your\nfirst order, it will appear here.")
+            "Your orders yet. When you place your\nfirst order, it will appear here."),
+        "your_points": MessageLookupByLibrary.simpleMessage("Your points")
       };
 }

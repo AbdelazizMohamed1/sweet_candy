@@ -45,5 +45,20 @@
   "order_summary": "ملخص الطلب",
   "total_price": "السعر الإجمالي",
   "checkout_now": "الدفع الآن",
-  "your_orders_yet": "لم تقم بأي طلبات بعد. عند وضع\nطلبك الأول، سيظهر هنا."
+  "your_orders_yet": "لم تقم بأي طلبات بعد. عند وضع\nطلبك الأول، سيظهر هنا.",
+  "edit_personal_data": "تعديل البيانات الشخصية",
+  "points": "النقاط",
+  "get_help": "الحصول على مساعدة",
+  "notification": "الإشعارات",
+  "contact_us": "اتصل بنا",
+  "about_us": "معلومات عنا",
+  "language": "اللغة",
+  "checkout": "الدفع",
+  "delete_account": "حذف الحساب",
+  "are_you_sure_delete_account": "هل أنت متأكد أنك تريد حذف الحساب؟",
+  "delete": "حذف",
+  "about_our_app": "حول تطبيقنا",
+  "we_are_here_to_help_you": "نحن هنا لمساعدتك",
+  "for_contact_us": "للاتصال بنا",
+  "your_points": "نقاطك"
 }
