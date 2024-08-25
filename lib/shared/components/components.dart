@@ -15,5 +15,5 @@ class Components{
   static void navigateBack({required context}) => Navigator.pop(context);
 
 
- static bool isArabic = true;
+ static bool isArabic = false;
 }

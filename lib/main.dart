@@ -9,21 +9,28 @@ import 'package:sweet_candy/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sweet_candy/shared/components/components.dart';
 import 'bloc_observier.dart';
+import 'core/cache/cache_helper.dart';
 import 'core/helper/dio_helper.dart';
 import 'features/setting/manager/localization_states.dart';
 import 'features/signup/manager/signup_cubit.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
+  if(CacheHelper.getData('isArabic') != null) {
+    Components.isArabic = CacheHelper.getData('isArabic');
+  }
   Bloc.observer = MyBlocObserver();
   // DioHelper.init();
   runApp(
+
     MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LocalizationCubit()),
         BlocProvider(create: (context) => OnBoardingCubit()),
         BlocProvider(create: (context) => SignupCubit(),)
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -34,7 +41,7 @@ class MyApp extends StatelessWidget {
     return BlocBuilder<LocalizationCubit,LocalizationStates>(
       builder: (context, state) {
         return MaterialApp(
-          locale: Components.isArabic ? const Locale('ar') : const Locale('en'),
+          locale: Components.isArabic! ? const Locale('ar') : const Locale('en'),
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,

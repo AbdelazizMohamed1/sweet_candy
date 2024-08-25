@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sweet_candy/features/home/home_layout.dart';
 import 'package:sweet_candy/features/login/forget_password/forget_password.dart';
 import 'package:sweet_candy/features/login/manager/login_cubit.dart';
 import 'package:sweet_candy/features/login/manager/login_states.dart';
@@ -95,6 +96,7 @@ class LoginScreen extends StatelessWidget {
                             height32,
                             defaultMaterialButton(
                               onPressed: () {
+                                Components.navigateTo(context: context, widget: HomeLayout());
                                // cubit.login(phone: phoneController.text, password: passwordController.text);
                               },
                               text: S.of(context).LoginSpace,

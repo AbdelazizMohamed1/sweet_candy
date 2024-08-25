@@ -48,7 +48,7 @@ class ForgetPassword extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                        width: fullWidth(context: context) / 4.8,
+                        width: fullWidth(context: context) / 4,
                         child: ListContainer(
                           controller: countryController,
                           text: countryController.text,
