@@ -88,7 +88,7 @@ class ProfileBodyScreen extends StatelessWidget {
                   SvgPicture.asset('images/sign_out.svg'),
                   width10,
                   Text(
-                    'Sign Out',
+                    S.of(context).sign_out,
                     style: text16W600(context, color: mainColor),
                   ),
                 ],

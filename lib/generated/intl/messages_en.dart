@@ -41,10 +41,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "Are You Sure You Want to Delete Account?"),
         "are_you_sure_logout": MessageLookupByLibrary.simpleMessage(
             "Are You Sure You Want \nTo Logout?"),
+        "balance": MessageLookupByLibrary.simpleMessage("Balance"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "checkout_now": MessageLookupByLibrary.simpleMessage("Checkout Now"),
+        "checkout_successful":
+            MessageLookupByLibrary.simpleMessage("Your Checkout successful"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
@@ -55,11 +58,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create new account"),
         "create_new_password":
             MessageLookupByLibrary.simpleMessage("Create new password"),
+        "creditor": MessageLookupByLibrary.simpleMessage("Creditor"),
+        "date": MessageLookupByLibrary.simpleMessage("Date"),
+        "debtor": MessageLookupByLibrary.simpleMessage("Debtor"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "delete_account":
             MessageLookupByLibrary.simpleMessage("Delete Account"),
         "did_not_receive_code":
             MessageLookupByLibrary.simpleMessage("Didn’t receive a code ? "),
+        "document": MessageLookupByLibrary.simpleMessage("Document"),
         "edit_personal_data":
             MessageLookupByLibrary.simpleMessage("Edit Personal Data"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -81,7 +88,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
         "no_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
+        "no_points_yet": MessageLookupByLibrary.simpleMessage(
+            "No points yet when you get your first point it will appear here"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
+        "order_now": MessageLookupByLibrary.simpleMessage("Order now"),
         "order_summary": MessageLookupByLibrary.simpleMessage("Order Summary"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_must_be_different": MessageLookupByLibrary.simpleMessage(
@@ -91,11 +101,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please wait, the administrator will grant you permission soon."),
         "points": MessageLookupByLibrary.simpleMessage("Points"),
         "resend_code": MessageLookupByLibrary.simpleMessage("Resend Code"),
+        "save_changes": MessageLookupByLibrary.simpleMessage("Save Changes"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "send_code": MessageLookupByLibrary.simpleMessage("Send Code"),
         "send_email": MessageLookupByLibrary.simpleMessage("Send Email"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "shop_name": MessageLookupByLibrary.simpleMessage("Shop Name"),
+        "sign_out": MessageLookupByLibrary.simpleMessage("Sign Out"),
+        "thank_you": MessageLookupByLibrary.simpleMessage("Thank you!"),
         "total_price": MessageLookupByLibrary.simpleMessage("Total Price"),
         "verification_message": MessageLookupByLibrary.simpleMessage(
             "We will send a code to verify the mobile number below"),

@@ -60,5 +60,16 @@
   "about_our_app": "حول تطبيقنا",
   "we_are_here_to_help_you": "نحن هنا لمساعدتك",
   "for_contact_us": "للاتصال بنا",
-  "your_points": "نقاطك"
+  "your_points": "نقاطك",
+  "order_now": "اطلب الآن",
+  "save_changes": "حفظ التغييرات",
+  "sign_out": "تسجيل الخروج",
+  "no_points_yet": "لا توجد نقاط بعد، عندما تحصل على أول نقطة ستظهر هنا",
+  "checkout_successful": "تم الدفع بنجاح",
+  "thank_you": "شكراً لك!",
+  "date": "التاريخ",
+  "document": "المستند",
+  "debtor": "المدين",
+  "creditor": "الدائن",
+  "balance": "الرصيد"
 }

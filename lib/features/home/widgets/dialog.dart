@@ -47,6 +47,7 @@ class DialogComponent extends StatelessWidget {
                 ),
               ),
               Container(
+                padding:  const EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                   color: mainColor,
                   borderRadius: BorderRadius.circular(10),

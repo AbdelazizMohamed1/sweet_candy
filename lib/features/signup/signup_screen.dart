@@ -161,7 +161,8 @@ class SignupScreen extends StatelessWidget {
                   height32,
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: defaultMaterialButton(
+                    child:
+                    defaultMaterialButton(
                       onPressed: () {
                         // cubit.register(
                         //   name: userNameController.text,

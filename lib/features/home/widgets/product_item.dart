@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../shared/colors.dart';
+import '../../../shared/components/components.dart';
 import '../../../shared/height.dart';
 import '../../../shared/text.dart';
 import '../../../shared/width.dart';
+import '../../product/product_screen.dart';
 
 class ProductItem extends StatefulWidget {
   const ProductItem({super.key});
@@ -31,6 +33,7 @@ class _ProductItemState extends State<ProductItem> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: fullWidth(context: context) / 2,
+      height: 280,
       child: Card(
         color: white,
         elevation: 5,
@@ -39,9 +42,16 @@ class _ProductItemState extends State<ProductItem> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(child: Image.asset('images/product1.png')),
+              GestureDetector(
+                onTap: () {
+                    Components.navigateTo(context: context, widget:  ProductScreen());
+                },
+                child: const Center(
+                    child: Image(image: AssetImage('images/product1.png'),height: 80,width: 100,fit: BoxFit.contain,),
+              ),
+              ),
               height16,
-              const Text('Heinz Tomato Sauce 360 gm Save 1 \$'),
+              const Text('Heinz Tomato Sauce 360 gm Save 1  \$',maxLines: 2,overflow: TextOverflow.ellipsis,),
               Row(
                 children: [
                   IconButton(

@@ -1,6 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sweet_candy/features/categories/categories_screen.dart';
 import 'package:sweet_candy/shared/colors.dart';
+import 'package:sweet_candy/shared/components/components.dart';
 import 'package:sweet_candy/shared/height.dart';
 import 'package:sweet_candy/shared/text.dart';
 import 'package:sweet_candy/shared/widgets/default_material_button.dart';
@@ -18,40 +21,24 @@ class HomeBodyScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: 140,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          width: fullWidth(context: context),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                children: [
-                  Text(
-                    'OFFER UP TO \n30%',
-                    style: text24W700(context),
-                    textAlign: TextAlign.center,
-                  ),
-                  const Spacer(),
-                  Container(
-                    child: defaultMaterialButton(
-                      onPressed: () {},
-                      text: 'order now',
-                      widget: Container(),
-                      color: mainColor,
-                      width: fullWidth(context: context) / 3,
-                      height: 30,
-                    ),
-                  )
-                ],
-              ),
-              const Spacer(),
-              Image.asset('images/product.png'),
-              const Spacer()
-            ],
+        CarouselSlider(
+          items: [1].map((i) {
+            return Builder(
+              builder: (context) => offerItem(context: context),
+            );
+          }).toList(),
+          options: CarouselOptions(
+            height: 140.0,
+            enlargeCenterPage: true,
+            aspectRatio: 16/9,
+            autoPlay: true,
+            autoPlayInterval: const Duration(seconds: 2),
+            autoPlayAnimationDuration: const Duration(milliseconds: 800),
+            // autoPlay: true,
+
           ),
         ),
-        height24,
+
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 40),
           padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -78,7 +65,9 @@ class HomeBodyScreen extends StatelessWidget {
           child: Row(
             children: [
               SvgPicture.asset('images/categories.svg'),
-              TextButtonUnderLine(text: S.of(context).categories)
+              TextButtonUnderLine(text: S.of(context).categories,onPressed: () {
+                Components.navigateTo(context: context, widget: CategoriesScreen(title: S.of(context).categories,));
+              },)
             ],
           ),
         ),
@@ -95,6 +84,7 @@ class HomeBodyScreen extends StatelessWidget {
                 return ElevatedButton(
                   onPressed: () {
                     print('Button $index pressed');
+                    Components.navigateTo(context: context, widget: CategoriesScreen(title: 'Button $index'));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: buttonColors[index % buttonColors.length],
@@ -118,18 +108,34 @@ class HomeBodyScreen extends StatelessWidget {
         ),
         height10,
         GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-            childAspectRatio: 0.65
-          ),
-          itemBuilder: (context, index) => const ProductItem(),
+          gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: fullWidth(context: context)/2,
+            childAspectRatio: ((fullWidth(context: context) / 2 )  - 20 ) / 280 ),
+          itemBuilder: (context, index) => const Center(child: ProductItem()),
           itemCount: 4,
           shrinkWrap: true,
-         padding: const EdgeInsets.only(left: 20,right: 20,bottom: 10),
-         physics: const NeverScrollableScrollPhysics(),
+          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+          physics: const NeverScrollableScrollPhysics(),
         )
       ],
     );
   }
 
+  Widget offerItem({required context}) => Container(
+        height: 140,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'OFFER UP TO \n30%',
+              style: text24W700(context),
+              textAlign: TextAlign.center,
+            ),
+            const Spacer(),
+            Image.asset('images/product.png'),
+            const Spacer()
+          ],
+        ),
+      );
 }

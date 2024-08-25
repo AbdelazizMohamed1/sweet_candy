@@ -60,6 +60,16 @@
   "about_our_app": "About Our App",
   "we_are_here_to_help_you": "We Are Here to Help You",
   "for_contact_us": "For Contact Us",
-  "your_points": "Your points"
-
+  "your_points": "Your points",
+  "order_now": "Order now",
+  "save_changes": "Save Changes",
+  "sign_out": "Sign Out",
+  "no_points_yet": "No points yet when you get your first point it will appear here",
+  "checkout_successful": "Your Checkout successful",
+  "thank_you": "Thank you!",
+  "date": "Date",
+  "document": "Document",
+  "debtor": "Debtor",
+  "creditor": "Creditor",
+  "balance": "Balance"
 }

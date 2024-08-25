@@ -669,6 +669,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Order now`
+  String get order_now {
+    return Intl.message(
+      'Order now',
+      name: 'order_now',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Changes`
+  String get save_changes {
+    return Intl.message(
+      'Save Changes',
+      name: 'save_changes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Out`
+  String get sign_out {
+    return Intl.message(
+      'Sign Out',
+      name: 'sign_out',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No points yet when you get your first point it will appear here`
+  String get no_points_yet {
+    return Intl.message(
+      'No points yet when you get your first point it will appear here',
+      name: 'no_points_yet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Checkout successful`
+  String get checkout_successful {
+    return Intl.message(
+      'Your Checkout successful',
+      name: 'checkout_successful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thank you!`
+  String get thank_you {
+    return Intl.message(
+      'Thank you!',
+      name: 'thank_you',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get date {
+    return Intl.message(
+      'Date',
+      name: 'date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Document`
+  String get document {
+    return Intl.message(
+      'Document',
+      name: 'document',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Debtor`
+  String get debtor {
+    return Intl.message(
+      'Debtor',
+      name: 'debtor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Creditor`
+  String get creditor {
+    return Intl.message(
+      'Creditor',
+      name: 'creditor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Balance`
+  String get balance {
+    return Intl.message(
+      'Balance',
+      name: 'balance',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

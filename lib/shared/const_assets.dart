@@ -15,4 +15,8 @@ class ConstAssets{
   static const String checkOut = 'images/check_out.svg';
   static const String delete = 'images/delete.svg';
   static const String whatsapp = 'images/whatsapp.svg';
+  static const String home = 'images/home.svg';
+  static const String order = 'images/order.svg';
+  static const String search = 'images/search.svg';
+  static const String profile = 'images/profile.svg';
 }

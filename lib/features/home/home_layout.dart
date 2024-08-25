@@ -3,7 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sweet_candy/features/home/manager/home_cubit.dart';
 import 'package:sweet_candy/features/home/manager/home_states.dart';
+import 'package:sweet_candy/features/setting/points/points_screen.dart';
+import 'package:sweet_candy/shared/colors.dart';
 import 'package:sweet_candy/shared/components/components.dart';
+import 'package:sweet_candy/shared/const_assets.dart';
 import 'package:sweet_candy/shared/text.dart';
 import 'package:sweet_candy/shared/width.dart';
 
@@ -30,14 +33,12 @@ class HomeLayout extends StatelessWidget {
                   print('${cubit.bodyIndex} body');
                 },
                 child: bottomNavItem(
-                  imagePath: cubit.bodyIndex == 0
-                      ? 'images/home_main.svg'
-                      : 'images/home.svg',
+                  imagePath: ConstAssets.home,
+                  color: cubit.bodyIndex == 0 ? mainColor : mainBlack,
 
                 ),
               ),
             ),
-
             Expanded(
               child: GestureDetector(
                 onTap: () {
@@ -45,14 +46,11 @@ class HomeLayout extends StatelessWidget {
                   print('${cubit.bodyIndex} body');
                 },
                 child: bottomNavItem(
-                  imagePath: cubit.bodyIndex == 1
-                      ? 'images/order_main.svg'
-                      : 'images/order.svg',
-
+                  imagePath: ConstAssets.order,
+                  color: cubit.bodyIndex == 1 ? mainColor : mainBlack,
                 ),
               ),
             ),
-
             Expanded(
               child: GestureDetector(
                 onTap: () {
@@ -60,14 +58,11 @@ class HomeLayout extends StatelessWidget {
                   print('${cubit.bodyIndex} body');
                 },
                 child: bottomNavItem(
-                  imagePath: cubit.bodyIndex == 2
-                      ? 'images/search_main.svg'
-                      : 'images/search.svg',
-
+                  imagePath: ConstAssets.search,
+                  color: cubit.bodyIndex == 2 ? mainColor : mainBlack,
                 ),
               ),
             ),
-
             Expanded(
               child: GestureDetector(
                 onTap: () {
@@ -75,10 +70,8 @@ class HomeLayout extends StatelessWidget {
                   print('${cubit.bodyIndex} body');
                 },
                 child: bottomNavItem(
-                  imagePath: cubit.bodyIndex == 3
-                      ? 'images/profile_main.svg'
-                      : 'images/profile.svg',
-
+                  imagePath: ConstAssets.profile,
+                  color: cubit.bodyIndex == 3 ? mainColor : mainBlack,
                 ),
               ),
             )
@@ -86,7 +79,6 @@ class HomeLayout extends StatelessWidget {
           Widget bottomNavBar(int index) => Padding(
                 padding: const EdgeInsets.symmetric(vertical: 30),
                 child: Row(
-
                   children: bottomNavBarItems,
                 ),
               );
@@ -110,6 +102,7 @@ class HomeLayout extends StatelessWidget {
               );
             }
           }
+
           return Scaffold(
             body: SafeArea(
               child: Padding(
@@ -119,12 +112,12 @@ class HomeLayout extends StatelessWidget {
                   itemCount: cubit.body.length,
                   controller: bodyController,
                   onPageChanged: (value) {
-                      print('${value} page');
-                      cubit.toggleBetweenBody(value);
+                    print('${value} page');
+                    cubit.toggleBetweenBody(value);
                   },
                   allowImplicitScrolling: true,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) =>  SingleChildScrollView(
+                  itemBuilder: (context, index) => SingleChildScrollView(
                     child: Column(
                       children: [
                         Padding(
@@ -133,7 +126,11 @@ class HomeLayout extends StatelessWidget {
                             children: [
                               Offstage(
                                   offstage: cubit.bodyIndex != 0,
-                                  child: SvgPicture.asset('images/reward.svg')),
+                                  child: InkWell(
+                                      onTap: () {
+                                        Components.navigateTo(context: context, widget: PointsScreen());
+                                      },
+                                      child: SvgPicture.asset('images/reward.svg'))),
                               width24,
                               const Spacer(),
                               Offstage(
@@ -142,9 +139,12 @@ class HomeLayout extends StatelessWidget {
                               const Spacer(),
                               GestureDetector(
                                   onTap: () {
-                                Components.navigateTo(context: context, widget: const SettingScreen());
+                                    Components.navigateTo(
+                                        context: context,
+                                        widget: const SettingScreen());
                                   },
-                                  child: SvgPicture.asset('images/setting.svg')),
+                                  child:
+                                      SvgPicture.asset('images/setting.svg')),
                             ],
                           ),
                         ),
@@ -166,11 +166,16 @@ class HomeLayout extends StatelessWidget {
 }
 
 class bottomNavItem extends StatelessWidget {
-  bottomNavItem({super.key, required this.imagePath});
+  bottomNavItem({super.key, required this.imagePath, required this.color});
   final String imagePath;
-
+  final Color color;
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(imagePath);
+    return SvgPicture.asset(
+      imagePath,
+      colorFilter: ColorFilter.mode(
+        color, BlendMode.srcIn,
+      ),
+    );
   }
 }

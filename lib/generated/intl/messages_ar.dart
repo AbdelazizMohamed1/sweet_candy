@@ -41,10 +41,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "هل أنت متأكد أنك تريد حذف الحساب؟"),
         "are_you_sure_logout": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد أنك تريد \nتسجيل الخروج؟"),
+        "balance": MessageLookupByLibrary.simpleMessage("الرصيد"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
         "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
         "checkout_now": MessageLookupByLibrary.simpleMessage("الدفع الآن"),
+        "checkout_successful":
+            MessageLookupByLibrary.simpleMessage("تم الدفع بنجاح"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
@@ -55,10 +58,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "create_new_password":
             MessageLookupByLibrary.simpleMessage("إنشاء كلمة مرور جديدة"),
+        "creditor": MessageLookupByLibrary.simpleMessage("الدائن"),
+        "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
+        "debtor": MessageLookupByLibrary.simpleMessage("المدين"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "delete_account": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
         "did_not_receive_code":
             MessageLookupByLibrary.simpleMessage("لم تتلقَ رمزًا ؟ "),
+        "document": MessageLookupByLibrary.simpleMessage("المستند"),
         "edit_personal_data":
             MessageLookupByLibrary.simpleMessage("تعديل البيانات الشخصية"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -79,7 +86,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "new_password":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
         "no_account": MessageLookupByLibrary.simpleMessage("لا تملك حساب ؟ "),
+        "no_points_yet": MessageLookupByLibrary.simpleMessage(
+            "لا توجد نقاط بعد، عندما تحصل على أول نقطة ستظهر هنا"),
         "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+        "order_now": MessageLookupByLibrary.simpleMessage("اطلب الآن"),
         "order_summary": MessageLookupByLibrary.simpleMessage("ملخص الطلب"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "password_must_be_different": MessageLookupByLibrary.simpleMessage(
@@ -90,12 +100,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "points": MessageLookupByLibrary.simpleMessage("النقاط"),
         "resend_code":
             MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
+        "save_changes": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "send_code": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
         "send_email":
             MessageLookupByLibrary.simpleMessage("إرسال بريد إلكتروني"),
         "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "shop_name": MessageLookupByLibrary.simpleMessage("اسم المتجر"),
+        "sign_out": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "thank_you": MessageLookupByLibrary.simpleMessage("شكراً لك!"),
         "total_price": MessageLookupByLibrary.simpleMessage("السعر الإجمالي"),
         "verification_message": MessageLookupByLibrary.simpleMessage(
             "سنرسل رمزًا للتحقق من رقم الهاتف أدناه"),
