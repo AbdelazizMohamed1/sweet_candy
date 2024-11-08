@@ -28,9 +28,10 @@ class HomeBodyScreen extends StatelessWidget {
             );
           }).toList(),
           options: CarouselOptions(
-            height: 140.0,
             enlargeCenterPage: true,
-            aspectRatio: 16/9,
+            height: 140,
+            aspectRatio: fullWidth(context: context)/140,
+            enlargeFactor: 1,
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 2),
             autoPlayAnimationDuration: const Duration(milliseconds: 800),
@@ -121,21 +122,17 @@ class HomeBodyScreen extends StatelessWidget {
     );
   }
 
-  Widget offerItem({required context}) => Container(
-        height: 140,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'OFFER UP TO \n30%',
-              style: text24W700(context),
-              textAlign: TextAlign.center,
-            ),
-            const Spacer(),
-            Image.asset('images/product.png'),
-            const Spacer()
-          ],
-        ),
-      );
+  Widget offerItem({required context}) => Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        'OFFER UP TO \n30%',
+        style: text24W700(context),
+        textAlign: TextAlign.center,
+      ),
+      const Spacer(),
+      Image.asset('images/product.png'),
+      const Spacer()
+    ],
+  );
 }

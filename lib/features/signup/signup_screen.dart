@@ -23,6 +23,7 @@ class SignupScreen extends StatelessWidget {
   TextEditingController shopNameController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController rePasswordController = TextEditingController();
   @override
@@ -40,7 +41,7 @@ class SignupScreen extends StatelessWidget {
                   height40,
                   GestureDetector(
                     onTap: () {
-                      cubit.pickImage(ImageSource.gallery);
+                      cubit.pickAndUploadImage(cubit.user!.uid);
                     },
                     child: Stack(
                       alignment: AlignmentDirectional.bottomEnd,
@@ -51,7 +52,7 @@ class SignupScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: cubit.image != null
-                                      ? FileImage(cubit.image!)
+                                      ? FileImage(File(cubit.image!.path))
                                       : const AssetImage(ConstAssets.user),
                                   fit: BoxFit.cover),
                               shape: BoxShape.circle),
@@ -109,6 +110,15 @@ class SignupScreen extends StatelessWidget {
                               child: SvgPicture.asset(ConstAssets.phone),
                             ),
                             hintText: S.of(context).phone),
+                        height24,
+                        defaultTextFormField(
+                            controller: emailController,
+                            textInputType: TextInputType.emailAddress,
+                            prefix: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: SvgPicture.asset(ConstAssets.shopName),
+                            ),
+                            hintText: S.of(context).email),
                         height24,
                         defaultTextFormField(
                           controller: passwordController,

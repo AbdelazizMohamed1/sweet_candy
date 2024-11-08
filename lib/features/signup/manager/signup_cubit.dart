@@ -1,6 +1,7 @@
-
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +17,6 @@ import 'package:path/path.dart' as path;
 
 import '../../../core/helper/dio_helper.dart';
 
-
 class SignupCubit extends Cubit<SignupStates> {
   SignupCubit() : super(SignupInitialState());
 
@@ -25,76 +25,118 @@ class SignupCubit extends Cubit<SignupStates> {
   bool isPassword = true;
   bool isRePassword = true;
 
-  void showPassword(){
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  final FirebaseFirestore fireStore = FirebaseFirestore.instance;
+  final FirebaseStorage storage = FirebaseStorage.instance;
+
+  void showPassword() {
     isPassword = !isPassword;
     emit(ToggleBetweenPasswordState());
   }
 
-  void showRePassword(){
+  void showRePassword() {
     isRePassword = !isRePassword;
     emit(ToggleBetweenPasswordState());
   }
-  File? image;
 
-  String? imageName;
+  XFile? image;
+  //pick and upload image from gallery
+  Future<String?> pickAndUploadImage(String userId) async {
+    emit(UploadImageLoadingState());
+    final ImagePicker picker = ImagePicker();
+    image = await picker.pickImage(source: ImageSource.gallery);
 
-  final ImagePicker _picker = ImagePicker();
+    if (image != null) {
+      File imageFile = File(image!.path);
 
-  Future<void> pickImage(ImageSource source) async {
-    final pickedFile = await _picker.pickImage(source: source);
+      try {
+        Reference storageReference =
+            storage.ref().child('user_images/$userId/profile_image.jpg');
 
-    if (pickedFile != null) {
-      image = File(pickedFile.path);
-      imageName = path.basename(pickedFile.path);
-      print('++++++++++++++++++++++++++++++++ ${image!.path} ++++++++++++++++++++++++++++++++++');
-      emit(ProfileImagePickedSuccessState());
-    } else {
-      print('No image selected.');
-      emit(ProfileImagePickedErrorState());
+        UploadTask uploadTask = storageReference.putFile(imageFile);
+        await uploadTask.whenComplete(() => null);
+
+        String? downloadURL;
+        downloadURL = await storageReference.getDownloadURL();
+        emit(UploadImageSuccessState());
+        return downloadURL;
+      } catch (e) {
+        print('Error uploading image: $e');
+        emit(UploadImageErrorState());
+        return null;
+      }
     }
 
+    return null;
   }
 
+  //sign up
+  UserCredential? userCredential;
+  User? user;
+  Future<void> signup({
+    required String imageUrl,
+    required String userName,
+    required String shopName,
+    required String shopAddress,
+    required String phone,
+    required String email,
+    required String password,
 
-  // void register({
-  //   required String name,
-  //   required String shopName,
-  //   required String address,
-  //   required String phone,
-  //   required String password,
-  //   required String confirmationPassword,
-  //   required File? image,
-  // }) async {
-  //   final formData = FormData.fromMap({
-  //     'name': name,
-  //     'shop_name': shopName,
-  //     'address': address,
-  //     'mobile_number': phone,
-  //     'password': password,
-  //     'confirm_password': confirmationPassword,
-  //     if (image != null)
-  //       'profile_picture': await MultipartFile.fromFile(
-  //         image.path,
-  //         filename: 'profile_picture.jpg',
-  //       ),
-  //   });
-  //
-  //   try {
-  //     emit(RegisterLoadingState());
-  //
-  //
-  //     Response response = await DioHelper.postData(
-  //       path: ApiConst.register,
-  //       data: formData,
-  //     );
-  //
-  //     print(response.statusCode);
-  //     print(response.data['message']);
-  //     emit(RegisterSuccessState());
-  //   } catch (error) {
-  //     print(error.toString());
-  //     emit(RegisterErrorState());
-  //   }
-  // }
+  }) async {
+    emit(RegisterLoadingState());
+    userCredential = await auth
+        .createUserWithEmailAndPassword(email: email, password: password)
+        .then((value) {
+      user = value.user!;
+      saveUserData(
+        userName:  userName,
+        uid: user!.uid,
+        imageUrl: imageUrl,
+        shopName: shopName,
+        shopAddress: shopAddress,
+        phone: phone,
+        email: email,
+        isVerified: false,
+      );
+      emit(RegisterSuccessState());
+    }).catchError((error) {
+      print(error.toString());
+      emit(RegisterErrorState());
+    });
+  }
 
+  //save user data
+  Future<void> saveUserData({
+    required String uid,
+    required String imageUrl,
+    required String userName,
+    required String shopName,
+    required String shopAddress,
+    required String phone,
+    required String email,
+    required bool isVerified,
+  }) async {
+    emit(SaveUserLoadingState());
+    CollectionReference users = fireStore.collection('users');
+
+    await users.doc(uid).set({
+      'uid': uid,
+      'imageUrl': imageUrl,
+      'userName': userName,
+      'shopName': shopName,
+      'shopAddress': shopAddress,
+      'phone': phone,
+      'email': email,
+      'isVerified': isVerified,
+      'createdAt': FieldValue.serverTimestamp(),
+    }).then(
+      (value) {
+        print('User data saved successfully!');
+        emit(SaveUserSuccessState());
+      },
+    ).catchError((error) {
+      print(error.toString());
+      emit(SaveUserErrorState());
+    });
+  }
 }

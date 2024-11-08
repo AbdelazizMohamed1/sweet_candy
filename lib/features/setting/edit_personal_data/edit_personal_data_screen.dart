@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -55,7 +57,7 @@ class EditPersonalDataScreen extends StatelessWidget {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  cubit.pickImage(ImageSource.gallery);
+                                  cubit.pickAndUploadImage(cubit.user!.uid);
                                 },
                                 child: Stack(
                                   alignment: AlignmentDirectional.bottomEnd,
@@ -66,7 +68,7 @@ class EditPersonalDataScreen extends StatelessWidget {
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
                                               image: cubit.image != null
-                                                  ? FileImage(cubit.image!)
+                                                  ? FileImage(File(cubit.image!.path))
                                                   : const AssetImage(ConstAssets.user),
                                               fit: BoxFit.cover),
                                           shape: BoxShape.circle),

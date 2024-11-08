@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sweet_candy/features/home/home_layout.dart';
 import 'package:sweet_candy/features/on_boarding/manager/on_boarding_cubit.dart';
 import 'package:sweet_candy/features/on_boarding/on_boarding_screen.dart';
 import 'package:sweet_candy/features/setting/manager/localization_cubit.dart';
@@ -10,38 +10,50 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sweet_candy/shared/components/components.dart';
 import 'bloc_observier.dart';
 import 'core/cache/cache_helper.dart';
-import 'core/helper/dio_helper.dart';
 import 'features/setting/manager/localization_states.dart';
 import 'features/signup/manager/signup_cubit.dart';
+import 'firebase_options.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await CacheHelper.init();
-  if(CacheHelper.getData('isArabic') != null) {
+  if (CacheHelper.getData('isArabic') != null) {
     Components.isArabic = CacheHelper.getData('isArabic');
   }
   Bloc.observer = MyBlocObserver();
   // DioHelper.init();
   runApp(
-
     MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LocalizationCubit()),
         BlocProvider(create: (context) => OnBoardingCubit()),
-        BlocProvider(create: (context) => SignupCubit(),)
+        BlocProvider(
+          create: (context) => SignupCubit(),
+        )
       ],
       child: const MyApp(),
     ),
   );
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LocalizationCubit,LocalizationStates>(
+    return BlocBuilder<LocalizationCubit, LocalizationStates>(
       builder: (context, state) {
         return MaterialApp(
-          locale: Components.isArabic! ? const Locale('ar') : const Locale('en'),
+          builder: (context, child) {
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(0.95)),
+              child: child!,
+            );
+          },
+          locale:
+              Components.isArabic! ? const Locale('ar') : const Locale('en'),
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -58,7 +70,6 @@ class MyApp extends StatelessWidget {
           home: OnBoardingScreen(),
         );
       },
-
     );
   }
 }
